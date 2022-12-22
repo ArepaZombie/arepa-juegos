@@ -1,6 +1,9 @@
 import React from "react";
+import './GameOver.css'
+import './Boton.css';
 
 function GameOver({puntaje,juego,setGame}){
+
   return(<div id="gameover">
     <p>Juego finalizado!</p>
     <p>Tu puntaje fue {puntaje}</p>

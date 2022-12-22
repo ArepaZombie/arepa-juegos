@@ -9,6 +9,12 @@
 #menu{
   color: white;
   padding: 40px 15px;
+  animation: animatetop 0.5s;
+}
+
+@keyframes animatetop {
+  from {transform: translateY(20px); opacity: 0}
+  to {transform: translateY(0px); opacity: 1}
 }
 
 #menu h3, #menu h2{

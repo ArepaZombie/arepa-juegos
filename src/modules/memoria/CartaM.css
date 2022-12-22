@@ -1,5 +1,6 @@
 .memory-card{
-  background-color: black;
+  background-color: #A83614;
+  border: #4f1706 solid;  
   cursor: pointer;
   aspect-ratio: 1/1;
   display: flex;
@@ -8,20 +9,31 @@
   border-radius: 10px;
   transition: all 0.5s;
   margin: 0;
+  animation: animatetop;
+  animation-duration: 0.4s;
 }
+
+@keyframes animatetop {
+  from {transform: translateY(20px); opacity: 0}
+  to {transform: translateY(0px); opacity: 1}
+}
+
 
 .memory-card:hover{
   box-shadow: black 2px 2px ;
-  background-color: rgba(0, 0, 0, 0.5);
-  transform: translate(1.5px,1.5px);
+  background-color: #F5572A;
+  transform: translate(-1.5px,-1.5px);
+  border: solid black;
 }
 
 .v{
-  background-color: #04c1f1;
-  border: solid white;
+  background-color: #A87D03 !important;
+  border: solid black;
+  transform: rotate3d(0, 1, 0, 180deg) !important;
 }
 
 .d{
-  background-color: 	#ffd700;
+  background-color: 	#F5C02A !important;
   border: solid black;
+  transform: translate(-2px,-2px);
 }

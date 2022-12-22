@@ -8,11 +8,10 @@ import Game from './modules/Game';
 
 function App() {
   const [game,setGame] = React.useState('menu')
-  console.log(game)
   return (
     <div className="App">
       {
-        game=='menu'?
+        game==='menu'?
         <Menu setgame={(a)=>setGame(a)}/>:
         <Game setGame={(a)=>setGame(a)} name={game}/>
       }

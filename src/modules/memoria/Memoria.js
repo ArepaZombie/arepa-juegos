@@ -3,7 +3,11 @@ import GameOver from "../GameOver";
 import CartaM from "./CartaM";
 import './Memoria.css'
 
-function Memoria({setGame}){
+function random(min, max) {
+  return Math.floor((Math.random() * (max - min + 1)) + min);
+}
+
+function Memoria({setGame,dificultad}){
   React.useEffect(()=>{
     document.body.style.backgroundColor = "#063e53"},[])
 
@@ -19,7 +23,7 @@ function Memoria({setGame}){
     if (jugada < 2){
       setCartaSeleccionada([...cartaSeleccionada,targetId])
       setCartas(cartas.map(i=>{
-        if(targetId == i.key) {
+        if(targetId  === i.key) {
           return {...i, 'volteada':true}};
         return i
       })) 
@@ -29,7 +33,7 @@ function Memoria({setGame}){
   const revisarVolteada = (e)=>{
     let i = e.target.id;
     for (let carta of cartas){
-      if(carta.key === i){
+      if(carta.key   === i){
         return carta.volteada}
     }
     return true
@@ -37,27 +41,57 @@ function Memoria({setGame}){
 
   /*Comparar las cartas que fueron seleccionadas */
   React.useEffect( () =>{
-    if(cartaSeleccionada.length==2){
+    if(cartaSeleccionada.length ===2){
       setTimeout(()=>{
         let i1 = cartaSeleccionada[0]
         let i2 = cartaSeleccionada[1]
-        if(i1[0]==i2[0]){
+        if(i1.slice(0,i1.length-1) ===i2.slice(0,i2.length-1)){
           setCartas(cartas.map(i=>{
-              if(i1 == i.key || i2 == i.key) {
+              if(i1  === i.key || i2  === i.key) {
                 return {...i, 'descubierta':true}};
               return i
             })) 
           }
         else setCartas(cartas.map(i=>{return{...i,'volteada':false}}))
-        setCartaSeleccionada([])
+        setCartaSeleccionada([]) 
         setMovimientos(movimientos+1)
         setJugada(0)},1000)}
   },[jugada])
 
   /*Para la creacion de cartas */
   const crearCartas = () => {
+    /*Emojis a usar */
+    let emojis = ['🤡','👻','💀','☠','👽','🤖','🎃','😼','🦴','🦷',
+    '🦾','🧡','💛','💚','💙','💜','🤎','🖤','🤍','🤮','🌷','🐍','🐬','🍀','🐙',
+    '🦑','🍆','🍚','🍧','🍕','🍺','🏆','🎱','🎸','🎨','🎬','🎧','🚀','🚨',
+    '⏳','💣','🎩','💉','🧲','🧿','🪓','🎵','🌳','🌵','🌴']
+
+    /*Cuantos emojis se usaran */
+    let cantCartas = 0;
+    switch(dificultad){
+      case 1: cantCartas = 4; break;
+      case 2: cantCartas = 8; break;
+      case 3: cantCartas = 16; break;
+      default: cantCartas = 4;
+    }
+
+    /*Seleccionamos x emojis al azar */
+    let emojisSeleccionados = [...Array(cantCartas).keys()].map(()=>emojis[random(0,emojis.length-1)])
+    
+    /*Checamos que no hayan repetidos */
+    for (let x=0;x<emojisSeleccionados.length;x++){
+      for (let i=1;i<emojisSeleccionados.length;i++){
+        
+        if (!(x>=i) && emojisSeleccionados[x] ===emojisSeleccionados[i]){
+          emojisSeleccionados[x] = emojis[random(0,emojis.length)]
+          x=0;
+          i=1;
+          continue
+        }
+      }    
+    }
     /*Creamos una serie de cartas por cada simbolo */
-    let listaCartas = ['💀','👻','👽','🎃'].map((e,i)=>{
+    let listaCartas = emojisSeleccionados.map((e,i)=>{
       return({
         'simbolo':e,
         'volteada':false,
@@ -65,7 +99,7 @@ function Memoria({setGame}){
         'key':i+'1'
     })}
     )
-      let listaCartas2 = ['💀','👻','👽','🎃'].map((e,i)=>{
+      let listaCartas2 = emojisSeleccionados.map((e,i)=>{
         return({
           'simbolo':e,
           'volteada':false,
@@ -107,12 +141,12 @@ function Memoria({setGame}){
 
   return(
     <div id='memoria'>
+        <p id='volver' onClick={()=>setGame('menu')}>{'Menu'}</p>
         <p id="movimientos">{"Movimientos: "+movimientos}</p>
       <div id='tablero'>
         {crearCartasElementos()}
       </div>
-        {gameover() && <GameOver puntaje={movimientos} juego="memoria" setGame={setGame}/>
-        }
+        {gameover() && <GameOver puntaje={movimientos} juego="memoria" setGame={setGame}/>}
     </div>
   )
 }
