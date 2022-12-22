@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
+//Modulos
+import Menu from './modules/Menu';
+import Game from './modules/Game';
+
+
 function App() {
+  const [game,setGame] = React.useState('menu')
+  console.log(game)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        game=='menu'?
+        <Menu setgame={(a)=>setGame(a)}/>:
+        <Game name={game}/>
+      }
     </div>
   );
 }
