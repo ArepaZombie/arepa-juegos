@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ArepaZombie's Game Table",
+  "name": "Coleccion de juegos de un jugador",
   "icons": [
     {
       "src": "favicon.ico",

@@ -12,9 +12,9 @@ function Menu({setgame}){
   }
 
   return(
-    <div>
-      <h2>ArepaZombie's</h2>
-      <h3>Game Table</h3>
+    <div id='menu'>
+      <h3>ArepaZombie's</h3>
+      <h2>Game Table</h2>
       <p className='opcion' onClick={()=>empezarJuego()}>Memoria</p>
 
 

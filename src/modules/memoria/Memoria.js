@@ -1,6 +1,6 @@
 import React from "react";
 import CartaM from "./CartaM";
-
+import './Memoria.css'
 
 function Memoria(){
   const [jugada,setJugada] = React.useState(0);
@@ -90,8 +90,8 @@ function Memoria(){
 
   return(
     <div id='memoria'>
-      <div id='tablero'>
         {jugada+' '+movimientos}
+      <div id='tablero'>
         {crearCartasElementos()}
       </div>
 

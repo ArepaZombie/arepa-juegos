@@ -1,6 +1,13 @@
 .memory-card{
   background-color: black;
   cursor: pointer;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: all 0.5s;
+  margin: 0;
 }
 
 .v{

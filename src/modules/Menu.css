@@ -1,6 +1,42 @@
+:root{
+--white    : #d1c5b7;
+--brown-1  : #856941;
+--brown-2  : #735d41;
+--blue-sky : #0193b7;
+--blue-king: #063e53;
+}
+
+#menu{
+  color: white;
+  padding: 40px 15px;
+}
+
+#menu h3, #menu h2{
+  margin: 0;
+}
+
+#menu h3{
+  font-size: 1rem;
+}
+
+#menu h2{
+  font-size: 2rem;
+}
+
 .opcion{
   width: 30%;
-  background-color: black;
-  color: white;
+  aspect-ratio: 1/1;
+  background-color: var(--blue-king);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.opcion:hover{
+  box-shadow: black 5px 5px ;
+  transform: translate(2px,2px);
 }
