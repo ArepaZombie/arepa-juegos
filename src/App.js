@@ -14,7 +14,7 @@ function App() {
       {
         game=='menu'?
         <Menu setgame={(a)=>setGame(a)}/>:
-        <Game name={game}/>
+        <Game setGame={(a)=>setGame(a)} name={game}/>
       }
     </div>
   );

@@ -9,6 +9,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #856941;
+  transition: all 1s;
 }
 
 /* white #d1c5b7	

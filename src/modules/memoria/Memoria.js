@@ -1,15 +1,19 @@
 import React from "react";
+import GameOver from "../GameOver";
 import CartaM from "./CartaM";
 import './Memoria.css'
 
-function Memoria(){
+function Memoria({setGame}){
+  React.useEffect(()=>{
+    document.body.style.backgroundColor = "#063e53"},[])
+
   const [jugada,setJugada] = React.useState(0);
   const [movimientos,setMovimientos]   = React.useState(0);
   const [cartas,setCartas] = React.useState([]);
   const [cartaSeleccionada,setCartaSeleccionada] = React.useState([])
 
   /*Lo que ocurre al darle click a una carta */
-  const voltearCarta= (e)=>{
+  const voltearCarta = (e)=>{
     setJugada(jugada+1)
     let targetId = e.target.id;
     if (jugada < 2){
@@ -18,8 +22,17 @@ function Memoria(){
         if(targetId == i.key) {
           return {...i, 'volteada':true}};
         return i
-    })) 
+      })) 
+    }
   }
+
+  const revisarVolteada = (e)=>{
+    let i = e.target.id;
+    for (let carta of cartas){
+      if(carta.key === i){
+        return carta.volteada}
+    }
+    return true
   }
 
   /*Comparar las cartas que fueron seleccionadas */
@@ -28,9 +41,6 @@ function Memoria(){
       setTimeout(()=>{
         let i1 = cartaSeleccionada[0]
         let i2 = cartaSeleccionada[1]
-        console.log(i1)
-        console.log(i2)
-        console.log(i1[0]==i2[0])
         if(i1[0]==i2[0]){
           setCartas(cartas.map(i=>{
               if(i1 == i.key || i2 == i.key) {
@@ -82,19 +92,27 @@ function Memoria(){
     simbolo={i.simbolo}
     volteada={i.volteada}
     descubierta={i.descubierta}
-    click={(e)=>voltearCarta(e)}
+    click={(e)=>!(revisarVolteada(e)) && voltearCarta(e)}
     key={i.key} id={i.key}
 />})
 
+  const gameover = ()=>{
+  for (let carta of cartas){
+    if(!carta.descubierta) return false
+  }
+    return true
+  }
+  
 
 
   return(
     <div id='memoria'>
-        {jugada+' '+movimientos}
+        <p id="movimientos">{"Movimientos: "+movimientos}</p>
       <div id='tablero'>
         {crearCartasElementos()}
       </div>
-
+        {gameover() && <GameOver puntaje={movimientos} juego="memoria" setGame={setGame}/>
+        }
     </div>
   )
 }

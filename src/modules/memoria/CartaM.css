@@ -10,6 +10,18 @@
   margin: 0;
 }
 
+.memory-card:hover{
+  box-shadow: black 2px 2px ;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translate(1.5px,1.5px);
+}
+
 .v{
-  background-color: aqua;
+  background-color: #04c1f1;
+  border: solid white;
+}
+
+.d{
+  background-color: 	#ffd700;
+  border: solid black;
 }

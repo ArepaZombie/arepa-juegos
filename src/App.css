@@ -1,3 +1,13 @@
 .App {
   text-align: center;
 }
+
+:root{
+  --white    : #d1c5b7;
+  --brown-1  : #856941;
+  --brown-2  : #735d41;
+  --blue-sky : #0193b7;
+  --blue-king: #063e53;
+  --amarillo : #ffd700;
+  }
+  
