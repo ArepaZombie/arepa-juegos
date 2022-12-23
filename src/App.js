@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 
+
 //Modulos
-import Menu from './modules/Menu';
-import Game from './modules/Game';
+import Menu from './modules/menu/Menu';
+import Game from './modules/menu/Game';
 
 
 function App() {

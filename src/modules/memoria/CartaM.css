@@ -35,5 +35,6 @@
 .d{
   background-color: 	#F5C02A !important;
   border: solid black;
-  transform: translate(-2px,-2px);
+  transform: translate(-2px,-2px) rotate3d(0, 1, 0, 180deg) !important;
+  transition: all 0.2s;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import GameOver from "../GameOver";
+import GameOver from "../menu/GameOver";
 import CartaM from "./CartaM";
 import './Memoria.css'
 
@@ -55,7 +55,7 @@ function Memoria({setGame,dificultad}){
         else setCartas(cartas.map(i=>{return{...i,'volteada':false}}))
         setCartaSeleccionada([]) 
         setMovimientos(movimientos+1)
-        setJugada(0)},1000)}
+        setJugada(0)},500)}
   },[jugada])
 
   /*Para la creacion de cartas */
@@ -131,10 +131,10 @@ function Memoria({setGame,dificultad}){
 />})
 
   const gameover = ()=>{
-  for (let carta of cartas){
-    if(!carta.descubierta) return false
-  }
-    return true
+    for (let carta of cartas){
+      if(!carta.descubierta) return false
+    }
+      return true
   }
   
 
@@ -146,7 +146,11 @@ function Memoria({setGame,dificultad}){
       <div id='tablero'>
         {crearCartasElementos()}
       </div>
-        {gameover() && <GameOver puntaje={movimientos} juego="memoria" setGame={setGame}/>}
+        {gameover() && <GameOver 
+          puntaje={movimientos} 
+          dificultad={dificultad} 
+          juego="memoria" 
+          setGame={setGame}/>}
     </div>
   )
 }

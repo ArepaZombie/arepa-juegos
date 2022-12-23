@@ -2,7 +2,7 @@ import React from 'react';
 import './Boton.css';
 import './Game.css';
 //Modulos de juegos
-import Memoria from './memoria/Memoria';
+import Memoria from '../memoria/Memoria';
 
 
 function Game({name,setGame}){

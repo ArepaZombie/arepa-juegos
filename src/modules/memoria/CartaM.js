@@ -7,7 +7,7 @@ function CartaM({simbolo,volteada,descubierta,id,click}){
     <p className={`memory-card ${volteada &&'v'} ${descubierta && 'd'}`}
     onClick={(e)=>!descubierta&&click(e)}
     id={id}>
-      {!(descubierta||volteada)?'❔':simbolo}
+      {/* !(descubierta||volteada)?'❔': */simbolo}
     </p>
   )
 }
