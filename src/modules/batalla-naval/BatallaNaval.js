@@ -2,6 +2,9 @@ import React from "react";
 import './BatallaNaval.css'
 import Celda from "./Celda";
 
+function random(min, max) {
+  return Math.floor((Math.random() * (max - min + 1)) + min);
+}
 
 function BatallaNaval({setGame}){
   const [tiros,setTiros] = React.useState(30);
@@ -22,9 +25,33 @@ function BatallaNaval({setGame}){
     }
     
     /*Ahora ponemos los barcos */
-    const barcos = [5,4,3,3,2]
-
-
+    const barcos = [5,4,3,3,2].map((largo)=>{
+      let puntoinicial = [random(1,10),random(0,9)]
+      let direccion = random(0,1);
+      let limite = direccion == 0 ? 10:9
+      let puntos = []
+      let pos = 1
+      for (let x=0;x<largo;x++){
+        let nuevoPunto = puntoinicial.slice()
+        let cambio = nuevoPunto[direccion] 
+        if (cambio+x>limite || pos>1){
+          nuevoPunto[direccion] = cambio - pos
+          pos++ 
+        }
+        else{
+          nuevoPunto[direccion] = cambio + x
+        }
+        let strNuevoPunto = [nuevoPunto[0],letras[nuevoPunto[1]]].join("")
+        if (listaceldas[strNuevoPunto].barco){
+          nuevoPunto[direccion] = cambio - pos
+          pos++
+          strNuevoPunto = [nuevoPunto[0],letras[nuevoPunto[1]]].join("")
+        }
+        puntos.push(strNuevoPunto)
+        listaceldas[strNuevoPunto] = {...listaceldas[strNuevoPunto],barco:true}
+      }
+      return puntos
+    })
 
     setCeldas(listaceldas)
   },[])

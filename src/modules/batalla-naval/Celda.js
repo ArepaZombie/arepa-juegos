@@ -3,11 +3,10 @@ import './Celda.css'
 /* ⭕❌ */
 function Celda(props){
   return(
-    <p className={`celda ${props.disparada&&'disparada'} ${props.barco&&'barco'}`}
-    disparada={props.disparada.toString()}
+    <p className={`celda ${props.barco && props.disparada? 'barco' :props.disparada&&'disparada'} ${props.barco&&'b'}`}
     onClick={(e)=>props.disparo(e)}
     id={props.id}>
-      {props.disparada && '⭕'}
+      {props.barco && props.disparada? '❌' : props.disparada && '⭕'}
     </p>
   )
 }
