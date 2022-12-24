@@ -3,8 +3,8 @@ import './Menu.css';
 
 function Menu({setgame}){
   const listaJuegos = {
-    'memoria':<span>Memoria</span>/* ,
-    'batalla':<span>Batalla <br></br> Naval</span>,
+    'memoria':<span>Memoria</span>,
+    'batalla':<span>Batalla <br></br> Naval</span>/*,
     'ahorcado':<span>Ahorcado</span>,
     'cachito':<span>Cachito <br></br> 🎲🎲</span>,
     'sudoku':<span>Sudoku</span>,

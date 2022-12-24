@@ -1,0 +1,30 @@
+.celda{
+  border: solid 0.5px white;
+  color: white;
+  width: 100%;
+  aspect-ratio: 1/1;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #0b5394;
+  font-size: 80%;
+  overflow: hidden;
+}
+
+.celda:hover{
+  transform: scale(1.09);
+  background-color: #073763;
+
+}
+
+.disparada{
+  background-color:#cc0000 !important;
+}
+
+.barco{
+  background-color: white !important;
+}
