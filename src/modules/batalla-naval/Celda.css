@@ -1,6 +1,5 @@
 .celda{
   border: solid 0.5px white;
-  color: white;
   width: 100%;
   aspect-ratio: 1/1;
   margin: 0;
@@ -22,12 +21,12 @@
 }
 
 .disparada{
-  background-color: #0b5394 !important;
+  background-color: #181818 !important;
 }
 
 .barco{
+  background-color:#c41c1c !important;
 }
 
 .b{
-  background-color:#cc0000 !important;
 }

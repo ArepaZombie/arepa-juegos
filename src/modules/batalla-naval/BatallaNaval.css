@@ -6,10 +6,11 @@
 --rojo-cl:#cc0000;
 }
 
-#tablero{
+#tablero-batalla{
   background-color: #0b5394;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(10,1fr);
   gap:0;
+  margin: auto;
 }

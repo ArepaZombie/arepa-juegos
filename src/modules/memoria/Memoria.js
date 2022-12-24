@@ -141,16 +141,20 @@ function Memoria({setGame,dificultad}){
 
   return(
     <div id='memoria'>
+      {!gameover ? <div>
         <p id="movimientos">{"Movimientos: "+movimientos}</p>
-      <div id='tablero'>
-        {crearCartasElementos()}
+        <div id='tablero-memoria'>
+          {crearCartasElementos()}
+        </div>
       </div>
-        {gameover && <GameOver 
+      :
+      <GameOver 
           puntaje={movimientos} 
           dificultad={dificultad} 
           juego="memoria" 
           setGame={setGame}
-          setGameOver={()=>setMovimientos(0)}/>}
+          setGameOver={()=>setMovimientos(0)}/>
+          }
     </div>
   )
 }
