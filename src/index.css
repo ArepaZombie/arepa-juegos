@@ -12,6 +12,20 @@ body {
   transition: all 1s;
 }
 
+@media screen and (min-width: 760px) {
+  :root{
+    font-size: 3vw;
+  }
+}
+
+body *{
+  animation: animatetop 0.5s;
+}
+
+@keyframes animatetop {
+  from {transform: translateY(20px); opacity: 0}
+  to {transform: translateY(0px); opacity: 1}
+}
 /* white #d1c5b7	
 brown 1 #856941	
 brown 2 #735d41	

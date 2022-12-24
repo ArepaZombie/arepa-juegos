@@ -1,20 +1,20 @@
 import React from "react";
+import './Memoria.css'
+
+/*Modulos */
 import GameOver from "../menu/GameOver";
 import CartaM from "./CartaM";
-import './Memoria.css'
 
 function random(min, max) {
   return Math.floor((Math.random() * (max - min + 1)) + min);
 }
 
 function Memoria({setGame,dificultad}){
-  React.useEffect(()=>{
-    document.body.style.backgroundColor = "#063e53"},[])
-
   const [jugada,setJugada] = React.useState(0);
   const [movimientos,setMovimientos]   = React.useState(0);
   const [cartas,setCartas] = React.useState([]);
   const [cartaSeleccionada,setCartaSeleccionada] = React.useState([])
+  const [gameover,setGameOver] = React.useState(false)
 
   /*Lo que ocurre al darle click a una carta */
   const voltearCarta = (e)=>{
@@ -130,27 +130,27 @@ function Memoria({setGame,dificultad}){
     key={i.key} id={i.key}
 />})
 
-  const gameover = ()=>{
+  const checkgameover = ()=>{
     for (let carta of cartas){
-      if(!carta.descubierta) return false
+      if(!(carta.descubierta)) return false
     }
       return true
   }
   
-
+  React.useEffect(()=>setGameOver(checkgameover()),[cartas])
 
   return(
     <div id='memoria'>
-        <p id='volver' onClick={()=>setGame('menu')}>{'Menu'}</p>
         <p id="movimientos">{"Movimientos: "+movimientos}</p>
       <div id='tablero'>
         {crearCartasElementos()}
       </div>
-        {gameover() && <GameOver 
+        {gameover && <GameOver 
           puntaje={movimientos} 
           dificultad={dificultad} 
           juego="memoria" 
-          setGame={setGame}/>}
+          setGame={setGame}
+          setGameOver={()=>setMovimientos(0)}/>}
     </div>
   )
 }

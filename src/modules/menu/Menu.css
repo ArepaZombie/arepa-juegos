@@ -9,12 +9,6 @@
 #menu{
   color: white;
   padding: 40px 15px;
-  animation: animatetop 0.5s;
-}
-
-@keyframes animatetop {
-  from {transform: translateY(20px); opacity: 0}
-  to {transform: translateY(0px); opacity: 1}
 }
 
 #menu h3, #menu h2{
@@ -30,9 +24,8 @@
 }
 
 .opcion{
-  width: 30%;
+  width: 100%;
   aspect-ratio: 1/1;
-  background-color: var(--blue-king);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -41,9 +34,37 @@
   border-radius: 10px;
   transition: all 0.2s;
   border: black solid;
+  margin: 0;
+  background-color: grey;
+  font-size: min(1rem,80%);
 }
+
 
 .opcion:hover{
   box-shadow: black 5px 5px ;
   transform: translate(2px,2px);
 }
+
+#opciones{
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0, 1fr));
+  gap: 1rem;
+  margin: 15px auto;
+  width: 90%;
+}
+
+#error{
+  cursor: pointer;
+  color: white;
+}
+
+@media screen and (min-width: 760px) {
+  #opciones{
+    grid-template-columns: repeat(4,1fr);
+    width: 80%;
+  }
+}
+
+/*COLORES DE LAS OPCIONES*/
+#opc-memoria{background-color: var(--blue-king);}
+#opc-batalla{background-color: 	#990000;}

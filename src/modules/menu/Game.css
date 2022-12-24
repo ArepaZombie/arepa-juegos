@@ -2,12 +2,6 @@
   width: 80%;
   color: white;
   margin: auto;
-  animation: animatetop 0.5s;
-}
-
-@keyframes animatetop {
-  from {transform: translateY(20px); opacity: 0}
-  to {transform: translateY(0px); opacity: 1}
 }
 
 #dificultad .btn{

@@ -8,7 +8,7 @@ import './Boton.css';
 
 
 
-function GameOver({puntaje,juego,dificultad,setGame}){
+function GameOver({puntaje,juego,dificultad,setGame,setGameOver}){
 /*const [highScore,setHighScore] = React.useState(-1) 
   let scores = Array.from(scoresdb[juego][dificultad-1])
 
@@ -49,8 +49,11 @@ function GameOver({puntaje,juego,dificultad,setGame}){
     {/* {highScore>=0 && <PuntajeAlto/>} */}
     <p className="btn" onClick={()=>setGame('menu')}>Volver al Menú</p>
     <p className="btn" onClick={()=>{
-      setTimeout(()=>setGame(juego),1)
-      setGame('')}}>Volver a Jugar</p>
+      setTimeout(()=>setGame(juego),1);
+      setGame('');
+      setGameOver();
+    }
+      }>Volver a Jugar</p>
   </div>)
 }
 
