@@ -14,3 +14,44 @@
   gap:0;
   margin: auto;
 }
+
+#barcos-faltantes{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+#batalla-naval p{
+  font-size: 0.5rem;
+}
+
+
+@media screen and (min-width: 760px) {
+  #batalla-naval{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: auto auto;
+    width: 80%;
+    margin:-25px  auto 20px auto ;
+  }
+  #batalla-naval p:first-of-type{
+    grid-column: 2;
+  }
+  #batalla-naval p:nth-of-type(2){
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #tablero-batalla{
+    grid-column: 2;
+    grid-row: 2;
+    width: 70%;
+  }
+  #barcos-faltantes{
+    flex-direction: column;
+    margin: 10px;
+  }
+  .barco-conteiner{
+    margin: 10px 0;
+  }
+}

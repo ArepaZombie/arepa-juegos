@@ -1,0 +1,21 @@
+.barco-conteiner{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  height: auto;
+}
+
+.celda-barco{
+  margin: 0;
+  width: 0.6rem;
+  aspect-ratio: 1/1;
+  border: 0.1px   solid  white;
+}
+
+.x{
+  background-color: #c41c1c;
+}
+
+.o{
+  background-color: #0b5394;
+}

@@ -45,7 +45,7 @@ function GameOver({puntaje,juego,dificultad,setGame,setGameOver}){
   return(
   <div id="gameover">
     <p>Juego finalizado!</p>
-    <p>Tu puntaje fue {puntaje}</p>
+    <p>{puntaje>0?`Tu puntaje fue ${puntaje}`:'Perdiste :('}</p>
     {/* {highScore>=0 && <PuntajeAlto/>} */}
     <p className="btn" onClick={()=>setGame('menu')}>Volver al Menú</p>
     <p className="btn" onClick={()=>{
