@@ -14,7 +14,7 @@ function BatallaNaval({setGame,dificultad}){
   const [celdas,setCeldas] = React.useState([])
   const [barcos,setBarcos] = React.useState([[0]])
   const [gameover, setGameOver] = React.useState(false)
-  const largoBarcos = [5,4,3,3,2,2,2,1]
+  const largoBarcos = [5,4,3,3,2,2,2]
 
   /*PARA CREAR LAS CELDAS */
   React.useEffect(() =>{

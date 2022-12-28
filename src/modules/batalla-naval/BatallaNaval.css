@@ -33,7 +33,7 @@
     grid-template-columns: 30% 70%;
     grid-template-rows: auto auto;
     width: 80%;
-    margin:-25px  auto 20px auto ;
+    margin:-10px  auto 20px auto ;
   }
   #batalla-naval p:first-of-type{
     grid-column: 2;

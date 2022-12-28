@@ -6,7 +6,8 @@ import GameOver from "../menu/GameOver"
 import './Ahorcado.css'
 
 /*Todas las letras en orden del teclado */
-const qwerty = ['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Ñ','Z','X','C','V','B','N','M']
+//const qwerty = ['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Ñ','Z','X','C','V','B','N','M']
+const qwerty =['A','B','C','D','E','F','G','H','I','J','K','M','N','Ñ','L','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 function Ahorcado({setGame,dificultad}){
   const [palabra,setPalabra] = React.useState('');
@@ -76,7 +77,6 @@ function Ahorcado({setGame,dificultad}){
     <div id='ahorcado'>
       <h1 id='a-word'>{escondida}</h1>
         <div id="a-teclado">
-          <p id="a-empty"></p>
           {teclado}
         </div>
         <div id='a-vidas'>
