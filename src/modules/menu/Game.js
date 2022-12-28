@@ -5,11 +5,13 @@ import './Game.css';
 import Memoria from '../memoria/Memoria';
 import Volver from './Volver';
 import BatallaNaval from '../batalla-naval/BatallaNaval';
+import Ahorcado from '../ahorcado/Ahorcado';
 
 
 function Game({name,setGame}){
   const [dificultad,setDificultad] = React.useState(0)
   let out = <div id='error'>Error</div>
+
 
   const background = (a) =>{
     document.body.style.backgroundColor = a
@@ -18,6 +20,7 @@ function Game({name,setGame}){
   switch(name){
     case 'memoria': out=<Memoria dificultad={dificultad} setGame={setGame} key='0'/>; background('#063e53'); break;
     case 'batalla': out=<BatallaNaval dificultad={dificultad} setGame={setGame} key='1'/>; background('#990000'); break;
+    case 'ahorcado': out=<Ahorcado dificultad={dificultad} setGame={setGame} key='2'/>; background('#81a432'); break;
     default: <p>Error</p>
   }
 
@@ -25,7 +28,7 @@ function Game({name,setGame}){
   return(
     <div id='game'>
       <Volver setGame={setGame}/>
-      {dificultad===0?
+      {name!=='batalla'&&dificultad===0?
       <div id='dificultad'>
         <h2>Seleccione dificultad</h2>
         <p className='btn' onClick={()=>setDificultad(1)}>Facil</p>

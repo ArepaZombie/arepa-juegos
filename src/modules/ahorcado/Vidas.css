@@ -1,21 +1,21 @@
-.barco-conteiner{
+.vidas-conteiner{
   display: flex;
   flex-direction: row;
   margin: auto;
   height: auto;
 }
 
-.celda-barco{
+.celda-vidas{
   margin: 0;
-  width: 0.6rem;
+  width: 1rem;
   aspect-ratio: 1/1;
   border: 0.1px   solid  white;
 }
 
-.celda-barco.x{
-  background-color: #c41c1c;
+.celda-vidas.x{
+  background-color: #a43236;
 }
 
-.celda-barco.o{
-  background-color: #0b5394;
+.celda-vidas.o{
+  background-color: #3281A4;
 }

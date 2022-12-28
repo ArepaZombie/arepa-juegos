@@ -1,0 +1,26 @@
+#a-teclado{
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+  width: 80%;
+  margin: auto;
+}
+
+#a-vidas{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+}
+
+#a-word{
+  margin: 10px;
+}
+
+@media screen and (min-width: 760px) {
+  #a-teclado{
+    width: 60%;
+  }
+  #a-word{
+    font-size: 4rem;
+  }
+}
