@@ -1,9 +1,13 @@
 import React from "react"
 import './Volver.css'
 
-function Volver({setGame}){
+function Volver({setGame,juego,dificultad}){
+  const score = localStorage.getItem(juego+'-'+dificultad)
   return(
-    <p id='volver' onClick={()=>setGame('menu')}>{'Menu'}</p>
+    <div id='volver'>
+      <p id='btn-volver' onClick={()=>setGame('menu')}>{'Menu'}</p>
+      <p>{score!==null&&'Puntaje alto: '+score}</p>
+    </div>
   )
 }
 

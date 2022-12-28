@@ -11,7 +11,8 @@
 }
 
 @media screen and (min-width: 760px) {
-  #tablero{
+  #tablero-memoria{
     gap: 50px;
-    width: 60%;}
+    width: 60%;
+  }
 }

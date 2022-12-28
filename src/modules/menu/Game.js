@@ -27,7 +27,7 @@ function Game({name,setGame}){
 
   return(
     <div id='game'>
-      <Volver setGame={setGame}/>
+      <Volver setGame={setGame} juego={name} dificultad={dificultad}/>
       {name!=='batalla'&&dificultad===0?
       <div id='dificultad'>
         <h2>Seleccione dificultad</h2>
