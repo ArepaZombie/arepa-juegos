@@ -8,6 +8,10 @@
   border-radius: 49% 51% 48% 52% / 48% 50% 50% 52% 
 }
 
+.hundido{
+  opacity: 0.2;
+}
+
 .celda-barco{
   margin: 0;
   width: 0.6rem;

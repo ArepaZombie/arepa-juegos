@@ -13,7 +13,7 @@ function Barcos({largo,quedan}){
   }
 
   return(
-    <div className="barco-conteiner">
+    <div className={`barco-conteiner  ${quedan==0&&'hundido'}`}>
       {celdas}
     </div>
     

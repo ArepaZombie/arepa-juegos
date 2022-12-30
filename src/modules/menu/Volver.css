@@ -16,7 +16,7 @@
 
 #volver p{
   margin: 15px 10px;
-  font-size: min(15px,0.8rem);
+  font-size: 0.8rem;
   margin-bottom: 0;
   color: white;
   text-align: center;
@@ -34,3 +34,8 @@
   cursor: pointer;
 }
 
+@media screen and (min-width: 760px) {
+  #volver{
+    font-size: 20px;
+  }
+}

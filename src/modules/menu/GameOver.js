@@ -14,7 +14,6 @@ function GameOver({puntaje,juego,dificultad,setGame,setGameOver}){
   React.useEffect(()=>{
     if(puntaje>0){
       const score = localStorage.getItem(juego+'-'+dificultad)
-      console.log(score)
       if (score===null || puntaje<score) {
         setPuntajeAlto(true)
         localStorage.setItem(juego+'-'+dificultad,puntaje)

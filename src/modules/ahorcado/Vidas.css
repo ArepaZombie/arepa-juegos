@@ -12,13 +12,12 @@
   width: 1rem;
   aspect-ratio: 1/1;
   animation: none;
+  color: #a43236;
 }
 
 .celda-vidas.x{
-  color: #061116;
+  opacity: 0.5;
+  color: #441517;
 }
 
-.celda-vidas.o{
-  color: #a43236;
-}
 

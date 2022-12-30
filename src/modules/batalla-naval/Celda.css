@@ -10,18 +10,18 @@
   cursor: pointer;
   transition: all 0.2s;
   background-color: #0b5394;
-  font-size: 80%;
+  font-size: 100%;
   overflow: hidden;
 }
 
 .celda:hover{
   transform: scale(1.09);
   background-color: #073763;
-
 }
 
 .disparada{
   background-color: #181818 !important;
+  color:#c41c1c;
 }
 
 .barco{
