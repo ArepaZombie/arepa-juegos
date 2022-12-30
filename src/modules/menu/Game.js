@@ -19,7 +19,7 @@ function Game({name,setGame}){
 
   switch(name){
     case 'memoria': out=<Memoria dificultad={dificultad} setGame={setGame} key='0'/>; background('#063e53'); break;
-    case 'batalla': out=<BatallaNaval dificultad={dificultad} setGame={setGame} key='1'/>; background('#990000'); break;
+    case 'batalla': out=<BatallaNaval dificultad={dificultad} setGame={setGame} key='1'/>; background('#891111'); break;
     case 'ahorcado': out=<Ahorcado dificultad={dificultad} setGame={setGame} key='2'/>; background('#81a432'); break;
     default: <p>Error</p>
   }

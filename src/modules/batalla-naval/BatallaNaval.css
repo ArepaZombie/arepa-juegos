@@ -6,6 +6,8 @@
 --rojo-cl:#cc0000;
 }
 
+
+
 #tablero-batalla{
   background-color: #0b5394;
   width: 80%;
@@ -18,7 +20,9 @@
 #barcos-faltantes{
   width: 80%;
   margin: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4,auto);
+  gap: 10px;
   flex-direction: row;
 }
 
@@ -35,12 +39,13 @@
     width: 80%;
     margin:-10px  auto 20px auto ;
   }
-  #batalla-naval p:first-of-type{
+  #batalla-naval div:first-of-type{
     grid-column: 2;
   }
-  #batalla-naval p:nth-of-type(2){
+  #batalla-naval p:first-of-type{
     grid-column: 1;
     grid-row: 1;
+    align-self: center;
   }
   #tablero-batalla{
     grid-column: 2;
@@ -48,6 +53,7 @@
     width: 70%;
   }
   #barcos-faltantes{
+    display: flex;
     flex-direction: column;
     margin: 10px;
   }

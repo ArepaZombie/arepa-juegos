@@ -3,19 +3,22 @@
   flex-direction: row;
   margin: auto;
   height: auto;
+  animation: none;
 }
+
 
 .celda-vidas{
   margin: 0;
   width: 1rem;
   aspect-ratio: 1/1;
-  border: 0.1px   solid  white;
+  animation: none;
 }
 
 .celda-vidas.x{
-  background-color: #a43236;
+  color: #061116;
 }
 
 .celda-vidas.o{
-  background-color: #3281A4;
+  color: #a43236;
 }
+

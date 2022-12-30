@@ -87,7 +87,7 @@ function Ahorcado({setGame,dificultad}){
     :
     <div>
     <p>La palabra era: {palabra}</p>
-    <GameOver puntaje={vida} 
+    <GameOver puntaje={vida>0?10-vida:0} 
       juego={'ahorcado'} 
       dificultad={dificultad}
       setGame={setGame}

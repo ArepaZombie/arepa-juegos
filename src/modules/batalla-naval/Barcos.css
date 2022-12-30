@@ -3,6 +3,9 @@
   flex-direction: row;
   margin: auto;
   height: auto;
+  background-color: #1e2c38;
+  padding: 0.25rem 0.5rem;
+  border-radius: 49% 51% 48% 52% / 48% 50% 50% 52% 
 }
 
 .celda-barco{

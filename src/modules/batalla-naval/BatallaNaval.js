@@ -4,6 +4,7 @@ import './BatallaNaval.css'
 import Celda from "./Celda";
 import GameOver from "../menu/GameOver"
 import Barcos from "./Barcos";
+import Tiros from "./Tiros";
 
 function random(min, max) {
   return Math.floor((Math.random() * (max - min + 1)) + min);
@@ -117,7 +118,7 @@ function BatallaNaval({setGame,dificultad}){
   }
   
   const checkGameOver = () =>{
-    if(tiros<0){return true}
+    if(tiros<1){return true}
     for(let barco of barcos){
       if(barco.length>0){return false}
     }
@@ -148,7 +149,10 @@ function BatallaNaval({setGame,dificultad}){
     <div>
       {!gameover?
       <div id="batalla-naval">
-        <p>Tiros: {tiros}</p>
+        <div>
+          <p>Tiros</p>
+          <Tiros largo={50} quedan={tiros}/>
+        </div>
         <div id="tablero-batalla">
           {elementosCeldas}
         </div>

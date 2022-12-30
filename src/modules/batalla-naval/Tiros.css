@@ -1,0 +1,23 @@
+.tiros-conteiner{
+  display: grid;
+  grid-template-columns: repeat(25,1fr);
+  width: 80%;
+  gap: 0;
+  margin: auto;
+  height: auto;
+  animation: none;
+}
+
+
+.celda-tiros{
+  margin: 0;
+  margin-top: -0.5rem;
+  width: 0.5rem;
+  aspect-ratio: 1/1;
+  animation: none;
+  color: rgb(11, 11, 11);
+}
+
+.celda-tiros.x{
+  opacity: 0.5;
+}
