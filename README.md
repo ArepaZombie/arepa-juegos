@@ -5,7 +5,8 @@ This is a project I made just for practice: Differente mini-games for one player
 Until now the games are:
 
 - Memory Game
-- Battleship (WIP)
+- Battleship
+- Hanged game
 
 # Los Juegos de Mesa de ArepaZombie
 
@@ -14,4 +15,5 @@ Este proyecto lo hice solo para practicar: Diferentes minijuegos para un jugador
 Hasta ahora los juegos son:
 
 - Memoria
-- Batalla Naval (en progreso)
+- Batalla Naval 
+- Ahorcado
