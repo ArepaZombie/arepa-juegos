@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/arepa-juegos/static/css/main.4c7cadfd.css",
-    "main.js": "/arepa-juegos/static/js/main.77b4ac6a.js",
+    "main.css": "/arepa-juegos/static/css/main.d7788cea.css",
+    "main.js": "/arepa-juegos/static/js/main.cd1a83ca.js",
     "index.html": "/arepa-juegos/index.html",
-    "main.4c7cadfd.css.map": "/arepa-juegos/static/css/main.4c7cadfd.css.map",
-    "main.77b4ac6a.js.map": "/arepa-juegos/static/js/main.77b4ac6a.js.map"
+    "main.d7788cea.css.map": "/arepa-juegos/static/css/main.d7788cea.css.map",
+    "main.cd1a83ca.js.map": "/arepa-juegos/static/js/main.cd1a83ca.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c7cadfd.css",
-    "static/js/main.77b4ac6a.js"
+    "static/css/main.d7788cea.css",
+    "static/js/main.cd1a83ca.js"
   ]
 }
